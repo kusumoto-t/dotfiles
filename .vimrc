@@ -1,3 +1,10 @@
+call plug#begin('~/.vim/plugged')
+
+
+" Plugin
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 " leader
 let mapleader = " "
 
@@ -34,3 +41,5 @@ set cursorline
 
 " tabstop
 set tabstop=4
+
+call plug#end()
