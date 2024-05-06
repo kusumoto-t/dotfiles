@@ -42,4 +42,9 @@ set cursorline
 " tabstop
 set tabstop=4
 
+" autocomplete
+" 補完表示時のEnterで改行をしない
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+inoremap <silent><expr> <Enter> coc#pum#visible() ? coc#pum#confirm() : "\<Enter>"
+
 call plug#end()
