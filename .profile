@@ -8,11 +8,14 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+export BASH_SILENCE_DEPRECATION_WARNING=1
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+       . "$HOME/.bashrc"
     fi
 fi
 
@@ -28,7 +31,6 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-. "$HOME/.cargo/env"
 
 # git prompt
 if [ -f "$HOME/.git-completion.bash" ]; then
@@ -48,7 +50,5 @@ alias gf="git fetch"
 alias gl="git log --graph --oneline"
 alias gb="git branch"
 alias pbcopy='clip.exe'
-
-# golang
-export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+alias ll="ls -ltr"
+alias kcc="kubectl config current-context"
